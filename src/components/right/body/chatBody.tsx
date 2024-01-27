@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import { chatSelector, followerSelector } from "../../../redux/reducers/chatReducer";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { db } from "../../../firebase/firebaseInit";
-import { doc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 import style from "./body.module.css"
 //designing the body where the chats will print
 const BodyChats=()=>{
@@ -12,14 +12,43 @@ const BodyChats=()=>{
         msg_id:0,
         sender:"User",
         time_stamp:""
-        
     })
+
+    const[paramId, getParamId] = useState({});
     //use selector to render the chats
     const chats = useSelector(chatSelector);
     const followers = useSelector(followerSelector);
     const{id} = useParams();
-    let data = chats.find((chat:any)=>chat.follower_id == id);
-    let follower = followers.find((chat:any)=>chat.follower_id == id);
+    const update = async() =>{
+        const dociDef = doc(db, "paramId", "GPbbDwYjky87rhgOdnJo");
+        id && await updateDoc(dociDef, {
+            "paramId": id
+        })
+    }
+    useEffect(()=>{
+        update();
+    }, [id])
+    
+
+    const getData = async() =>{
+        const docRef = doc(db, "paramId", "GPbbDwYjky87rhgOdnJo");
+        const docSnap = await getDoc(docRef);
+        docSnap.exists() && getParamId(docSnap.data())
+        console.log("paramId" )
+        console.log(docSnap.data())
+    }
+    useEffect(()=>{
+        getData();
+    }, [])
+
+    
+
+
+
+
+    let data = chats.find((chat: any) => chat.follower_id === paramId || chat.follower_id === id );
+
+    let follower = followers.find((chat:any)=>chat.follower_id == paramId || chat.follower_id === id);
     console.log(" is");
     console.log(data);
     const filter = (e:React.FormEvent<HTMLFormElement>) =>{

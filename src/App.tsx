@@ -22,7 +22,6 @@ function App() {
                 <Route path="/" element={<><HeadInfo/><BodyChats/></>}/>
                 <Route path="/body/:id" element={<><HeadInfo/><BodyChats/></>}/>
               </Routes>
-
             </Router>
         
         </div>
