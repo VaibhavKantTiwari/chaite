@@ -3,6 +3,7 @@ import { followerSelector } from "../../../redux/reducers/chatReducer"
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import style from "./body.module.css";
+import BodyChats from "../../right/body/chatBody";
 
 
 //left body design
