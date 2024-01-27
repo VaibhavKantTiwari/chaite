@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import { followerSelector } from "../../../redux/reducers/chatReducer"
 import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import style from "./body.module.css";
 
 
@@ -34,21 +34,22 @@ const Body = ()=>{
                         
                         <li key={index} >
                             {/* using navlivk to navigate the current user */}
-                            <Link to={`/body/${Name.follower_id}`} className={style.usercomp}  >
-                            <div className={style.imgcontainer}>
-                               <img className={style.imgcontn} src={Name.image_url}/>
-                            </div>
-                            <div className={style.infocontainer}>
-                                <div className={style.username}>
-                                    {Name.name}
+                            <NavLink to={`/body/${Name.follower_id}`} className={style.usercomp} style={({isActive})=>(isActive?{backgroundColor:"skyblue", color:"darkblue"}:undefined)} >
+                                <div className={style.imgcontainer}>
+                                <img className={style.imgcontn} src={Name.image_url}/>
                                 </div>
-                                <div className={style.lastword}>
-                                    {Name.text_part}...
+                                <div className={style.infocontainer}>
+                                    <div className={style.username}>
+                                        {Name.name}
+                                    </div>
+                                    <div className={style.lastword}>
+                                        {Name.text_part}...
+                                    </div>
                                 </div>
-                            </div>
                             
-                        </Link>  
+                            </NavLink>  
                         </li>
+
                         
                         
                     ))}
@@ -63,4 +64,3 @@ const Body = ()=>{
 }
 export default Body;
 {/* <NavLink to={{pathname:`/body/${Name.follower_id}`}}></NavLink> */}
-// style={({isActive})=>(isActive?{backgroundColor:"skyblue", color:"darkblue"}:undefined)}
