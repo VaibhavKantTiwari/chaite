@@ -83,7 +83,7 @@ const BodyChats=()=>{
                     </>)}
                 </div>
                 {/* sending message to follower */}
-                <form onSubmit={filter} className={style.fillhere}>
+                {data && <form onSubmit={filter} className={style.fillhere}>
                     <div className={style.fillinp}>
                         <input type="text" required placeholder="type here"  value={packet.text} onChange={(e)=>updateanddata(e.target.value)}/>
                     </div>
@@ -92,7 +92,7 @@ const BodyChats=()=>{
                     </div>
                     
 
-                </form>
+                </form>}
                 
 
             </div>
