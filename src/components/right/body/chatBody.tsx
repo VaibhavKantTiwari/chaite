@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import { chatSelector, followerSelector } from "../../../redux/reducers/chatReducer";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { db } from "../../../firebase/firebaseInit";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import style from "./body.module.css"
 //designing the body where the chats will print
 const BodyChats=()=>{
@@ -13,50 +13,44 @@ const BodyChats=()=>{
         sender:"User",
         time_stamp:""
     })
-
-    const[paramId, getParamId] = useState("");
     //use selector to render the chats
     const chats = useSelector(chatSelector);
     const followers = useSelector(followerSelector);
     const{id} = useParams();
-    const update = async() =>{
-        const dociDef = doc(db, "paramId", "GPbbDwYjky87rhgOdnJo");
-        id && await updateDoc(dociDef, {
-            "paramId": id
-        })
-    }
-    useEffect(()=>{
-        update();
-    }, [id])
+    // const update = async() =>{
+    //     const dociDef = doc(db, "paramId", "GPbbDwYjky87rhgOdnJo");
+    //     id && await updateDoc(dociDef, {
+    //         "paramId": id
+    //     })
+    // }
+    // useEffect(()=>{
+    //     update();
+    // }, [id])
     
 
-    const getData = async() =>{
-        const docRef = doc(db, "paramId", "GPbbDwYjky87rhgOdnJo");
-        const docSnap = await getDoc(docRef);
-        docSnap.exists() && getParamId(docSnap.data().paramId)
-        // console.log("doci.data" )
-        // console.log(docSnap.data().paramId)
-    }
-    useEffect(()=>{
-        getData();
-    }, [])
+    // const getData = async() =>{
+    //     const docRef = doc(db, "paramId", "GPbbDwYjky87rhgOdnJo");
+    //     const docSnap = await getDoc(docRef);
+    //     docSnap.exists() && getParamId(docSnap.data().paramId)
+    //     // console.log("doci.data" )
+    //     // console.log(docSnap.data().paramId)
+    // }
+    // useEffect(()=>{
+    //     getData();
+    // }, [])
 
     
 
 
 
 
-    let data = chats.find((chat: any) => chat.follower_id === id ||  chat.follower_id == paramId );
-    console.log("data is");
-    console.log(data);
+    let data = chats.find((chat: any) => chat.follower_id === id);
 
-    let follower = followers.find((chat:any)=> chat.follower_id === id ||  chat.follower_id == paramId);
-    console.log("follower is");
-    console.log(follower);
+    let follower = followers.find((chat:any)=> chat.follower_id === id);
+    
+
     const filter = (e:React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
-        console.log("chatload")
-        console.log(packet)
 
         const updateData = async() =>{
             const docRef = doc(db, "Chats", data.id);
