@@ -14,7 +14,7 @@ const BodyChats=()=>{
         time_stamp:""
     })
 
-    const[paramId, getParamId] = useState({});
+    const[paramId, getParamId] = useState("");
     //use selector to render the chats
     const chats = useSelector(chatSelector);
     const followers = useSelector(followerSelector);
@@ -33,9 +33,9 @@ const BodyChats=()=>{
     const getData = async() =>{
         const docRef = doc(db, "paramId", "GPbbDwYjky87rhgOdnJo");
         const docSnap = await getDoc(docRef);
-        docSnap.exists() && getParamId(docSnap.data())
-        console.log("paramId" )
-        console.log(docSnap.data())
+        docSnap.exists() && getParamId(docSnap.data().paramId)
+        // console.log("doci.data" )
+        // console.log(docSnap.data().paramId)
     }
     useEffect(()=>{
         getData();
@@ -46,11 +46,13 @@ const BodyChats=()=>{
 
 
 
-    let data = chats.find((chat: any) => chat.follower_id === paramId || chat.follower_id === id );
-
-    let follower = followers.find((chat:any)=>chat.follower_id == paramId || chat.follower_id === id);
-    console.log(" is");
+    let data = chats.find((chat: any) => chat.follower_id === id ||  chat.follower_id == paramId );
+    console.log("data is");
     console.log(data);
+
+    let follower = followers.find((chat:any)=> chat.follower_id === id ||  chat.follower_id == paramId);
+    console.log("follower is");
+    console.log(follower);
     const filter = (e:React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
         console.log("chatload")
@@ -97,8 +99,8 @@ const BodyChats=()=>{
                     chating.....
                 </div>
                 <div className={style.chatbox}>
-                    {data && data.chat_history.map((chat:any)=><>
-                    <div className={chat.sender=="User"?style.maindabba2:style.maindabba1}>
+                    {data && data.chat_history.map((chat:any, index:any)=><>
+                    <div className={chat.sender=="User"?style.maindabba2:style.maindabba1} key={index}>
                         <div className={style.innerbox}>
 
                             <div className={style.baate}>{chat.text}</div>
