@@ -69,7 +69,6 @@ import {db }from '../firebase/firebaseInit';
 
 const DataFetching = () => {
   const dispatch = useDispatch();
-
   useEffect(() => {
     const fetchData = () => {
       dispatch(fetchChatStart());
