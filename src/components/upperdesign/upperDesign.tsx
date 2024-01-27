@@ -4,7 +4,7 @@ const UpperDesign = ()=>{
     return(
         // head design
         <div>
-            chaite
+            Chat_App
         </div>
     )
 }
