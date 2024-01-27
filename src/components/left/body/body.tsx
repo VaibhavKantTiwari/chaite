@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import { followerSelector } from "../../../redux/reducers/chatReducer"
 import { useState } from "react";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import style from "./body.module.css";
 
 
