@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import { followerSelector } from "../../../redux/reducers/chatReducer"
 import { useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import style from "./body.module.css";
 
 
@@ -34,7 +34,7 @@ const Body = ()=>{
                         
                         <li key={index} >
                             {/* using navlivk to navigate the current user */}
-                            <NavLink to={`/body/${Name.follower_id}`} className={style.usercomp}  style={({isActive})=>(isActive?{backgroundColor:"skyblue", color:"darkblue"}:undefined)}>
+                            <Link to={`/body/${Name.follower_id}`} className={style.usercomp}  >
                             <div className={style.imgcontainer}>
                                <img className={style.imgcontn} src={Name.image_url}/>
                             </div>
@@ -47,7 +47,7 @@ const Body = ()=>{
                                 </div>
                             </div>
                             
-                        </NavLink>  
+                        </Link>  
                         </li>
                         
                         
@@ -63,3 +63,4 @@ const Body = ()=>{
 }
 export default Body;
 {/* <NavLink to={{pathname:`/body/${Name.follower_id}`}}></NavLink> */}
+// style={({isActive})=>(isActive?{backgroundColor:"skyblue", color:"darkblue"}:undefined)}
