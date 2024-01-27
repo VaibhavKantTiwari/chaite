@@ -20,7 +20,7 @@ function App() {
             <Router>
               <Routes>
                 <Route path="/" element={<><HeadInfo/><BodyChats/></>}/>
-                <Route path="/body/:id" element={<><HeadInfo/><BodyChats/></>}/>
+                <Route path="body/:id" element={<><HeadInfo/><BodyChats/></>}/>
               </Routes>
             </Router>
         

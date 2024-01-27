@@ -17,6 +17,8 @@ const BodyChats=()=>{
     const chats = useSelector(chatSelector);
     const followers = useSelector(followerSelector);
     const{id} = useParams();
+    console.log("id")
+    console.log(id)
     // const update = async() =>{
     //     const dociDef = doc(db, "paramId", "GPbbDwYjky87rhgOdnJo");
     //     id && await updateDoc(dociDef, {
@@ -44,9 +46,13 @@ const BodyChats=()=>{
 
 
 
-    let data = chats.find((chat: any) => chat.follower_id === id);
+    let data = chats.find((chat: any) => chat.follower_id == id);
+    console.log("data")
+    console.log(data)
 
-    let follower = followers.find((chat:any)=> chat.follower_id === id);
+    let follower = followers.find((chat:any)=> chat.follower_id == id);
+    console.log("follower")
+    console.log(follower)
     
 
     const filter = (e:React.FormEvent<HTMLFormElement>) =>{
