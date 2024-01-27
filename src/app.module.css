@@ -1,0 +1,27 @@
+.mainbox{
+    height: 750px;
+    width: 1410px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.upper{
+    width: 99%;
+    background-color: darkblue;
+    height: 7%;
+    font-size: 40px;
+    color: aliceblue;
+    font-weight: bold;
+    font-style: italic;
+    padding-left: 1%;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.setup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:93% ;
+}

@@ -1,0 +1,43 @@
+.userInfo{
+    height: 15%;
+    width: 100%;
+    display: flex;
+    background-color: aqua;
+    justify-content: center;
+}
+.leftpart{
+    width: 30%;
+    height: 100%;
+}
+.imgcont{
+    width:35%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.infocont{
+    width:65%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: bold;
+    color: aliceblue;
+    font-style: italic;
+
+}
+.image{
+    height: 80%;
+    width: 55%;
+    border-radius: 50px;
+}
+.dataRendered{
+    height: 85%;
+    width: 100%;
+    display: flex;
+
+    flex-direction: column;
+}
