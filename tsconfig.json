@@ -11,7 +11,8 @@
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": true, // Set to true when running with ts-node
+    "allowJs": true, // Allow TypeScript to process JavaScript files
     "jsx": "react-jsx",
 
     /* Linting */

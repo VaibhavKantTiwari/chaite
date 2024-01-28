@@ -1,0 +1,133 @@
+.prapanch{
+    width: 70%;
+    height: 100%;
+
+    border-bottom-right-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+}
+.activity{
+    height: 5%;
+    width: 1005;
+    background-color: skyblue;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 30px;
+    font-style: italic;
+    color: aliceblue;
+
+}
+.chatbox{
+    height: 85%;
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    max-height: 85%;
+    overflow-y: scroll;
+    background-color: skyblue;
+
+}
+.maindabba1{
+    width: 100%;
+    height: 25%;
+    background-color: skyblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.maindabba2{
+    width: 100%;
+    height: 25%;
+    background-color: skyblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+.innerbox{
+    width: 30%;
+    height: 95%;
+    background-color: darkblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border-radius: 10px;
+}
+.baate{
+    width: 90%;
+    height: 76%;
+    padding-top: 5px;
+    padding-left: 10px;
+    background-color: darkblue;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    color: aliceblue;
+}
+.samay{
+    width: 90%;
+    height: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    color: aliceblue;
+    padding-bottom: 5px;
+}
+.fillhere{
+    height:10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkblue;
+    border-bottom-right-radius: 8px;
+}
+.fillinp{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.fillsum{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+input{
+    height: 60%;
+    width: 90%;
+    border-radius: 10px;
+    border:none;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    padding-left: 20px;
+    color: darkblue;
+}
+button{
+    margin-left: 20px;
+    width: 50%;
+    height: 60%;
+    border-radius: 10px;
+    border:none;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    color: darkblue;
+}
+
