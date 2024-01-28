@@ -17,9 +17,10 @@ function App() {
         </div>
         <DataFetching/>
         <div className={style.setup}>
-            <Router>
+            <Router basename=''>
               <Routes>
                 <Route path="/" element={<><HeadInfo/><BodyChats/></>}/>
+                <Route path="/*" element={<><HeadInfo/><BodyChats/></>}/>
                 <Route path="body/:id" element={<><HeadInfo/><BodyChats/></>}/>
               </Routes>
             </Router>
