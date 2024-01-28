@@ -1,12 +1,13 @@
 import { useSelector } from "react-redux";
 import { chatSelector, followerSelector } from "../../../redux/reducers/chatReducer";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState} from "react";
 import { db } from "../../../firebase/firebaseInit";
 import { doc, updateDoc } from "firebase/firestore";
 import style from "./body.module.css"
 //designing the body where the chats will print
 const BodyChats=()=>{
+
     const[packet, setPacket] = useState({
         text:"",
         msg_id:0,
@@ -33,7 +34,7 @@ const BodyChats=()=>{
     // const getData = async() =>{
     //     const docRef = doc(db, "paramId", "GPbbDwYjky87rhgOdnJo");
     //     const docSnap = await getDoc(docRef);
-    //     docSnap.exists() && getParamId(docSnap.data().paramId)
+    //     docSnap.exists() && setId(docSnap.data().paramId)
     //     // console.log("doci.data" )
     //     // console.log(docSnap.data().paramId)
     // }
@@ -46,11 +47,11 @@ const BodyChats=()=>{
 
 
 
-    let data = chats.find((chat: any) => chat.follower_id == id);
+    let data = chats.find((chat: any) => chat.follower_id == id );
     console.log("data")
     console.log(data)
 
-    let follower = followers.find((chat:any)=> chat.follower_id == id);
+    let follower = followers.find((chat:any)=> chat.follower_id == id );
     console.log("follower")
     console.log(follower)
     
