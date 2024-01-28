@@ -6,6 +6,7 @@ import HeadInfo from './components/left/head/head';
 import BodyChats from './components/right/body/chatBody';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import UpperDesign from './components/upperdesign/upperDesign';
+import Page404 from './components/error/Error';
 function App() {
 
   return (
@@ -21,7 +22,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<><HeadInfo/><BodyChats/></>}/>
                 <Route path="body/:id" element={<><HeadInfo/><BodyChats/></>}/>
-                <Route path="/*" element={<><HeadInfo/><BodyChats/></>}/>
+                <Route path="/*" element={<Page404/>}/>
               </Routes>
             </Router>
         
